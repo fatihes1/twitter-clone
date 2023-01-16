@@ -1,16 +1,31 @@
 <template>
-  <nuxt-link to="#">
-    <div>
+  <nuxt-link to="#" class="flex items-center p-3 w-min text-black hover:bg-gray-200 dark:hover:bg-dim-200 dark:text-white rounded-full" :class="defaultTransition">
+    <div class="w-6 h-6 text-dark" >
       <slot name="icon"></slot>
     </div>
 
-    <div>
+    <div class="hidden xl:block ml-4 text-xl" :class="textClasses">
       <slot name="name"></slot>
     </div>
   </nuxt-link>
 </template>
 
-<script>
+<script setup>
+const {defaultTransition} = useTailwindConfig();
+
+const props = defineProps({
+  active: {
+    type: Boolean,
+    default: false
+  }
+})
+
+const textClasses = computed(() => {
+  return {
+    'font-semibold': props.active,
+    'font-normal': !props.active
+  }
+})
 
 </script>
 

@@ -16,8 +16,11 @@
   "dependencies": {
     "@heroicons/vue": "^1.0.6",
     "@prisma/client": "^4.9.0",
+    "@tailwindcss/forms": "^0.5.3",
     "bcrypt": "^5.1.0",
     "bson-objectid": "^2.0.4",
-    "jsonwebtoken": "^9.0.0"
+    "jsonwebtoken": "^9.0.0",
+    "jwt-decode": "^3.1.2",
+    "url-pattern": "^1.0.3"
   }
 }

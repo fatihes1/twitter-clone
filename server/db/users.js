@@ -1,4 +1,4 @@
-import { prisma } from ".";
+import {prisma} from ".";
 import bcrypt from "bcrypt";
 
 export const createUser = async (userData) => {
@@ -16,6 +16,14 @@ export const getUserByUsername = async (username) => {
     return prisma.user.findUnique({
         where: {
             username
+        }
+    })
+};
+
+export const getUserById = async (userId) => {
+    return prisma.user.findUnique({
+        where: {
+            id: userId
         }
     })
 };
